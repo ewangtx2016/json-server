@@ -1,23 +1,24 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
+    <headers></headers>
     <router-view/>
   </div>
 </template>
 
 <script>
+import headers from './components/Header.vue'
 export default {
-  name: 'App'
+  name: 'App',
+  components: {
+    'headers': headers
+  }
 }
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+*{
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
 }
 </style>
