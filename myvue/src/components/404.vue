@@ -1,15 +1,16 @@
+
 <template>
-  <div class="list">
-     list 
+  <div class="error">
+     {{msg}}
   </div>
 </template>
 
 <script>
 export default {
-  name: 'list',
+  name: 'error',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      msg: 'this is 404'
     }
   }
 }
