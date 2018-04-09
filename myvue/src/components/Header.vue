@@ -6,11 +6,11 @@
         <div class="btn-group"  role="group" aria-label="...">
             <router-link to="/"><button type="button" class="btn btn-default">首页</button></router-link>
             <router-link to="/info"><button type="button" class="btn btn-default">INFO</button></router-link>
-            <router-link to="/list"><button type="button" class="btn btn-default">LIST</button></router-link>
+            <router-link to="/list"><button type="button" class="btn btn-default">LIST<span class="badge">{{getnub}}</span></button></router-link>
             
         </div>
         <button class="btn btn-primary pull-right" type="button">
-                BIG`LV <span class="badge">4</span>
+                添加 +
         </button>
   </div><!-- /.container-fluid -->
 </nav>
@@ -22,8 +22,24 @@ export default {
   name: "headers",
   data() {
     return {
-      msg: "Welcome to Your Vue.js App"
+      listNub: 0
     };
+  },
+  computed: {
+    getnub(){
+      this.getListDataLen()
+      return this.$store.state.count > 0 ?   this.$store.state.count :  this.listNub
+    }
+  },
+  methods: {
+    getListDataLen(){
+      this.$http.get("http://localhost:3000/users").then(response => {
+        this.listNub = response.data.length;
+      });
+    }
+  },
+  created(){
+    this.getListDataLen()
   }
 };
 </script>

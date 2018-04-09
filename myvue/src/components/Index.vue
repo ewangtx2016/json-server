@@ -1,18 +1,18 @@
 <template>
-  <div class="hello">
-    this my first project
+  <div class="home">
+    asdfasdf
   </div>
 </template>
 
 <script>
 export default {
-  name: 'HelloWorld',
-  data () {
+  name: "Home",
+  data() {
     return {
-      msg: 'Welcome to Your Vue.js App'
+
     }
   }
-}
+};
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
